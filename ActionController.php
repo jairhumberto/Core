@@ -12,7 +12,7 @@ namespace Squille\Core;
 abstract class ActionController {
     private $viewFactory;
 
-    // TODO: seguir modelo de convenção na criação das viewsx.
+    // TODO: seguir modelo de convenção na criação das views.
     public function __construct(ViewFactory $viewFactory) {
         $this->viewFactory = $viewFactory;
     }
