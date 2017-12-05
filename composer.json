@@ -1,13 +1,13 @@
 {
     "name": "squille/core",
     "type": "library",
-    "description": "Core is a PHP microframework",
+    "description": "Core is a PHP micro-framework",
     "keywords": ["php", "framework"],
     "homepage": "http://core.squille.org/",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jair Humberto da Silva Filho",
+            "name": "Jair Humberto",
             "email": "jairhumberto@gmail.com",
             "homepage": "https://github.com/jairhumberto"
         }
@@ -18,11 +18,6 @@
     "autoload": {
         "psr-4": {
             "Squille\\Core\\": "src/"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "master": "1.0.0"
         }
     }
 }
