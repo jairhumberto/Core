@@ -3,27 +3,32 @@
  * Squille PHP Framework (http://squille.com/squille-php-framework)
  *
  * @copyright Copyright (c) 2017 Squille
- * @license   this software is distributed under MIT license, see the license.mit file
+ * @license   this software is distributed under MIT license, see the
+ * *            license.mit file
  */
 
 namespace Squille\Core;
 
-class View {
+class View
+{
     private $module;
     private $file;
     private $variables;
 
-    public function __construct($module, $file) {
+    public function __construct($module, $file)
+    {
         $this->module = $module;
         $this->file = $file;
         $this->variables = new Collection();
     }
 
-    public function addVariable($variable, $value) {
+    public function addVariable($variable, $value)
+    {
         $this->variables->add($variable, $value);
     }
 
-    public function display() {
+    public function display()
+    {
         $file = SOURCE_DIR . $this->module . DS . 'view' . DS . $this->file;
         
         if (! file_exists($file)) {

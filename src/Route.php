@@ -3,43 +3,52 @@
  * Squille PHP Framework (http://squille.com/squille-php-framework)
  *
  * @copyright Copyright (c) 2017 Squille
- * @license   this software is distributed under MIT license, see the license.mit file
+ * @license   this software is distributed under MIT license, see the
+ * *            license.mit file
  */
 
 namespace Squille\Core;
 
-class Route {
+class Route
+{
     private $ids;
     private $module;
     private $controller;
     private $action;
 
-    public function __construct($route) {
+    public function __construct($route)
+    {
         $this->ids = new Collection();
         $this->parse($route);
     }
 
-    public function getIds() {
+    public function getIds()
+    {
         return $this->ids;
     }
 
-    public function getModule() {
+    public function getModule()
+    {
         return $this->module;
     }
 
-    public function setModule($value) {
+    public function setModule($value)
+    {
         $this->module = $value;
     }
 
-    public function getController() {
+    public function getController()
+    {
         return $this->controller;
     }
 
-    public function getAction() {
+    public function getAction()
+    {
         return $this->action;
     }
 
-    private function parse($route) {
+    private function parse($route)
+    {
         $routes = $this->split($route);
         
         @$this->module = $routes[0];
@@ -51,7 +60,8 @@ class Route {
         }
     }
 
-    private function split($route) {
+    private function split($route)
+    {
         preg_match_all('~/([A-Za-z0-9-]+)~', $route, $matches);
         return $matches[1];
     }
