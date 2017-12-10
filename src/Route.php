@@ -42,6 +42,11 @@ class Route
         return $this->controller;
     }
 
+    public function getAction()
+    {
+        return $this->action;
+    }
+
     private function parse($route)
     {
         $routes = $this->split($route);

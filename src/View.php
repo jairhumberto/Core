@@ -29,7 +29,11 @@ class View
 
     public function display()
     {
-        $file = SOURCE_DIR . $this->module . DS . 'view' . DS . $this->file;
+        $file = dirname($_SERVER['DOCUMENT_ROOT'])
+                . DIRECTORY_SEPARATOR . 'source'
+                . DIRECTORY_SEPARATOR . $this->module
+                . DIRECTORY_SEPARATOR . 'view'
+                . DIRECTORY_SEPARATOR . $this->file;
 
         if (! file_exists($file)) {
             throw new ViewException(sprintf('file %s not found', $file));

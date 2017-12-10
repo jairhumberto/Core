@@ -18,7 +18,7 @@ class Collection extends \ArrayIterator
 
     public function get($index)
     {
-        return $this->offsetGet($index);
+        return @$this->offsetGet($index);
     }
 
     public function getFirst()

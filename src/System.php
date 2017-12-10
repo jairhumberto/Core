@@ -24,7 +24,8 @@ class System
     {
         $route = $this->parseRoute($this->args->get('path'));
 
-        $routeModule = include 'source'
+        $routeModule = include dirname($_SERVER['DOCUMENT_ROOT'])
+                             . DIRECTORY_SEPARATOR . 'source'
                              . DIRECTORY_SEPARATOR . $route->getModule()
                              . DIRECTORY_SEPARATOR . 'routes.php';
 
