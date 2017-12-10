@@ -9,8 +9,6 @@
 
 namespace Squille\Core;
 
-use Squille\Core\Connection\Config;
-
 class System
 {
     private $config;
