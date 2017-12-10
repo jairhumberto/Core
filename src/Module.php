@@ -13,18 +13,18 @@ class Module
 {
     private $route;
     private $args;
-    private $config;
+    private $routeMap;
 
-    public function __construct(Route $route, Collection $args, $config)
+    public function __construct(Route $route, Collection $args, $routeMap)
     {
         $this->route = $route;
         $this->args = $args;
-        $this->config = $config;
+        $this->routeMap = $routeMap;
     }
 
     public function init()
     {
-        foreach ($this->config['routes'] as $route => $class) {
+        foreach ($this->routeMap as $route => $class) {
             if (preg_match('~' . $route . '(/.*)*$~', $this->args->get('path'))) {
                 $this->initController($class);
                 return;

@@ -20,14 +20,12 @@ class System
         $this->args = $args;
     }
 
-    // TODO: Remover configuração.
     public function init()
     {
         $route = $this->parseRoute($this->args->get('path'));
-        $configModule = include SOURCE_DIR . $route->getModule() . DS
-                        . 'config' . DS . 'config.php';
-        
-        $module = new Module($route, $this->args, $configModule);
+        $routeModule = include $route->getModule() . DIRECTORY_SEPARATOR . 'routes.php';
+
+        $module = new Module($route, $this->args, $routeModule);
         $module->init();
     }
 
