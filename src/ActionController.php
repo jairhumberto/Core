@@ -1,10 +1,10 @@
 <?php
 /**
- * Squille PHP Framework (http://squille.com/squille-php-framework)
+ * Squille Core (https://github.com/jairhumberto/Core)
  *
- * @copyright Copyright (c) 2017 Squille
+ * @copyright Copyright (c) 2018 Squille
  * @license   this software is distributed under MIT license, see the
- * *            license.mit file
+ *            LICENSE file
  */
 
 namespace Squille\Core;
