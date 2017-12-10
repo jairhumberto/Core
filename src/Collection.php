@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (c) 2018 Squille
  * @license   this software is distributed under MIT license, see the
- *            LICENSE file
+ *            LICENSE file.
  */
 
 namespace Squille\Core;
@@ -33,7 +33,7 @@ class Collection extends \ArrayIterator
         foreach ($this as $value) {
             $r = $value;
         }
-        
+
         return $r;
     }
 
@@ -44,7 +44,7 @@ class Collection extends \ArrayIterator
                 return $key;
             }
         }
-        
+
         return false;
     }
 
@@ -55,7 +55,7 @@ class Collection extends \ArrayIterator
                 return $value;
             }
         }
-        
+
         return false;
     }
 }

@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (c) 2018 Squille
  * @license   this software is distributed under MIT license, see the
- *            LICENSE file
+ *            LICENSE file.
  */
 
 namespace Squille\Core;
@@ -30,7 +30,7 @@ class Module
                 return;
             }
         }
-        
+
         throw new ModuleException('Route not found');
     }
 

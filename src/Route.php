@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (c) 2018 Squille
  * @license   this software is distributed under MIT license, see the
- *            LICENSE file
+ *            LICENSE file.
  */
 
 namespace Squille\Core;
@@ -42,19 +42,14 @@ class Route
         return $this->controller;
     }
 
-    public function getAction()
-    {
-        return $this->action;
-    }
-
     private function parse($route)
     {
         $routes = $this->split($route);
-        
+
         @$this->module = $routes[0];
         @$this->controller = $routes[1];
         $this->action = isset($routes[2]) ? $routes[2] : 'index';
-        
+
         for ($i = 3; $i < count($routes); $i ++) {
             $this->ids->append($routes[$i]);
         }

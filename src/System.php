@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (c) 2018 Squille
  * @license   this software is distributed under MIT license, see the
- *            LICENSE file
+ *            LICENSE file.
  */
 
 namespace Squille\Core;
@@ -23,7 +23,10 @@ class System
     public function init()
     {
         $route = $this->parseRoute($this->args->get('path'));
-        $routeModule = include $route->getModule() . DIRECTORY_SEPARATOR . 'routes.php';
+
+        $routeModule = include 'source'
+                             . DIRECTORY_SEPARATOR . $route->getModule()
+                             . DIRECTORY_SEPARATOR . 'routes.php';
 
         $module = new Module($route, $this->args, $routeModule);
         $module->init();
@@ -33,15 +36,15 @@ class System
     {
         $modules = new Collection($this->config['modules']);
         $route = new Route($path);
-        
+
         $module = $modules->keyExists('/' . $route->getModule());
-        
+
         if ($module === false) {
             $route = new Route('/' . $modules->getFirst() . $path);
         } else {
             $route->setModule($module);
         }
-        
+
         return $route;
     }
 }
